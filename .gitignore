@@ -1,0 +1,28 @@
+# Environment variables — JANGAN pernah commit file ini
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Config file dengan API key nyata
+config.js
+
+# Script sementara yang berisi API key
+*.mjs
+scripts/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Node
+node_modules/
+
+# Build output
+dist/
+
+# Kiro sessions
+.kiro/

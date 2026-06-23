@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- Security Headers via meta tags (OWASP best practice) -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(self), microphone=(), geolocation=(self)" />
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data: blob: https://*.supabase.co https://*.unsplash.com https://images.unsplash.com;
+    connect-src 'self' https://*.supabase.co wss://*.supabase.co;
+    frame-ancestors 'none';
+    base-uri 'self';
+    form-action 'self';
+  " />
+  <title>Amora Craft House | Toko Bunga Premium Bandung — Rangkaian Segar & Custom</title>
+  <meta name="description" content="Amora Craft House — toko bunga premium di Bandung. Rangkaian bunga segar, custom bouquet, wedding floristry, same-day delivery. Pesan sekarang!">
+  <meta name="keywords" content="toko bunga bandung, bunga segar, custom bouquet, wedding flowers, rangkaian bunga, florist bandung">
+  <meta property="og:title" content="Amora Craft House — Toko Bunga Premium Bandung">
+  <meta property="og:description" content="Rangkaian bunga premium handcrafted untuk setiap momen spesial. Same-day delivery Bandung.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=1200&q=80">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://web-toko-bunga-puw74lhsk-rms190502.vercel.app">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-group">
+        <a class="logo" href="#">Amora craft house </a>
+        <span class="brand-subtitle">Flowers arrangement</span>
+      </div>
+      <nav class="nav">
+        <a href="#products">Collections</a>
+        <a href="#products">Occasions</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button id="menuBtn" class="icon-btn" aria-label="Menu" aria-expanded="false">☰</button>
+        <button id="searchBtn" class="icon-btn" aria-label="Search">🔍</button>
+        <button id="cartBtn" class="icon-btn cart-btn" aria-label="Cart">🛒 <span id="cartCount">0</span></button>
+      </div>
+    </div>
+    <!-- Mobile Nav -->
+    <div id="mobileNav" class="mobile-nav" aria-hidden="true">
+      <a href="#products" onclick="closeMobileNav()">Collections</a>
+      <a href="#products" onclick="closeMobileNav()">Occasions</a>
+      <a href="#about" onclick="closeMobileNav()">About</a>
+      <a href="#contact" onclick="closeMobileNav()">Contact</a>
+    </div>
+    <div id="searchOverlay" class="search-overlay" aria-hidden="true">
+      <div class="search-overlay__inner">
+        <input id="searchInput" type="text" class="search-input" placeholder="Cari produk..." autocomplete="off" />
+        <button id="searchClose" class="search-close" aria-label="Tutup pencarian">✕</button>
+      </div>
+      <div class="search-overlay__results" id="searchResults"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-body">
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow">🌸 MAISON DE FLEURS · BANDUNG</p>
+          <h1>Where Beauty <span>Blooms</span><br>Eternal</h1>
+          <p class="lead">Handcrafted floral arrangements designed for those who cherish the extraordinary. Each bloom, a statement of refined taste.</p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary">💐 Explore Collections</a>
+            <a href="#about" class="btn btn-ghost">Our Story</a>
+          </div>
+          <div class="hero-trust">
+            <span class="trust-item">✅ Same-Day Delivery</span>
+            <span class="trust-item">⭐ 500+ Happy Clients</span>
+            <span class="trust-item">🎁 Custom Orders</span>
+          </div>
+        </div>
+        <div class="hero-image-wrap">
+          <img src="foto/asset/3.jpg" alt="Amora Craft House Bouquet" />
+          <div class="hero-image-badge">
+            <span>🌺</span>
+            <div>
+              <p>Fresh Daily</p>
+              <small>Premium Flowers</small>
+            </div>
+          </div>
+        </div>
+        <!-- Foto khusus mobile — hanya muncul di HP -->
+        <div class="hero-mobile-img" aria-hidden="true"></div>
+      </div>
+      <!-- Full-viewport marquee placed outside the centered container so it can reach both edges -->
+      <div class="hero-marquee">
+        <div class="hero-marquee__track">
+          <span>Same-Day Delivery</span>
+          <span>Custom Orders</span>
+          <span>Wedding Floristry</span>
+          <span>Corporate Events</span>
+          <span>Luxury Gift Boxes</span>
+          <span>Same-Day Delivery</span>
+          <span>Custom Orders</span>
+          <span>Wedding Floristry</span>
+          <span>Corporate Events</span>
+          <span>Luxury Gift Boxes</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="products container">
+      <div class="feature-strip">
+        <div class="feature-item">
+          <div class="feature-icon">🌸</div>
+          <h4>Fresh Every Day</h4>
+          <p>Bunga segar langsung dari kebun pilihan setiap hari</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🚀</div>
+          <h4>Same-Day Delivery</h4>
+          <p>Pengiriman di hari yang sama untuk area Bandung</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">✨</div>
+          <h4>Custom Design</h4>
+          <p>Rangkaian custom sesuai keinginan dan budget Anda</p>
+        </div>
+      </div>
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Koleksi terbaru</p>
+          <h2 class="section-title">Koleksi Pilihan</h2>
+        </div>
+        <p class="section-description">Pilihan rangkaian terbaik dengan mood modern, elegan, dan sempurna untuk hadiah istimewa.</p>
+      </div>
+      <div class="product-toolbar">
+        <div class="product-filter-section">
+          <button id="filterToggle" class="filter-toggle-btn" aria-expanded="false">
+            Filter <span class="filter-toggle-icon">▾</span>
+          </button>
+          <button class="filter-btn active" data-filter="all">All</button>
+          <div id="filterPanel" class="filter-panel" aria-hidden="true">
+            <button class="filter-panel-btn" data-filter="bridal">Bridal</button>
+            <button class="filter-panel-btn" data-filter="events">Events</button>
+            <button class="filter-panel-btn" data-filter="gifting">Gifting</button>
+            <button class="filter-panel-btn" data-filter="subscription">Subscription</button>
+            <button class="filter-panel-btn" data-filter="luxury">Luxury</button>
+          </div>
+        </div>
+        <p class="product-helper">Jelajahi rangkaian premium untuk setiap momen spesial.</p>
+      </div>
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+
+    <section id="about" class="about container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Our Heritage</p>
+          <h2 class="section-title">Flowers as fine art, not mere decoration.</h2>
+        </div>
+        <p class="section-description">Founded in 2012 with a passion for romantic craftsmanship, our boutique florist blends heirloom beauty with modern elegance.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-media">
+          <div class="about-main-image"></div>
+          <div class="about-side-image"></div>
+        </div>
+        <div class="about-copy">
+          <p>Founded in 2012 by a floral artist inspired by Parisian ateliers, our story began with a single bouquet and a promise to make every arrangement feel like an intimate love letter.</p>
+          <p>Today, we create elegant flower moments for weddings, anniversaries, and bespoke gifts — each collection crafted with the same romantic care and timeless attention to detail.</p>
+          <div class="about-stats">
+            <div class="about-stat">
+              <span>2012</span>
+              <strong>Tahun Berdiri</strong>
+            </div>
+            <div class="about-stat">
+              <span>Romantic</span>
+              <strong>Kisah Cinta</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-bottom-cta">
+        <div class="about-cta-decor"></div>
+        <div class="about-cta-copy">
+          <p class="eyebrow about-cta-eyebrow">First to Know</p>
+          <h2 class="about-cta-title">First to <span>Bloom</span></h2>
+          <p class="about-cta-description">Join our private list for exclusive previews of new collections, seasonal arrangements, and invitations to studio events.</p>
+        </div>
+        <form class="about-cta-form" action="#" method="post">
+          <div class="about-cta-field">
+            <input type="email" name="email" placeholder="Your email address" aria-label="Email address" required>
+            <button type="submit" class="btn btn-primary about-cta-button">→</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="contact" class="contact container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Cek Status</p>
+          <h2 class="section-title">Lacak Pesanan</h2>
+        </div>
+        <p class="section-description">Masukkan nomor pesanan atau nomor WhatsApp untuk cek status pesanan Anda.</p>
+      </div>
+      <div class="track-form">
+        <div class="track-input-wrap">
+          <input type="text" id="trackInput" placeholder="Contoh: ORD-20260619-1234 atau 0812xxx" autocomplete="off" />
+          <button class="btn btn-primary" id="trackBtn">🔍 Cek Pesanan</button>
+        </div>
+        <div id="trackResult"></div>
+      </div>
+
+      <div class="section-head" style="margin-top:4rem">
+        <div>
+          <p class="eyebrow">Pesan sekarang</p>
+          <h2 class="section-title">Hubungi Kami</h2>
+        </div>
+        <p class="section-description">Isi formulir singkat dan kami akan langsung menghubungi Anda via WhatsApp.</p>
+      </div>
+      <form id="contactForm" class="contact-form">
+        <div class="row">
+          <input type="text" name="name" placeholder="Nama" required>
+          <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <textarea name="message" placeholder="Pesan / Detail pesanan" required></textarea>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p style="font-family:'Dancing Script',cursive;font-size:1.5rem;color:rgba(253,246,240,.9);margin-bottom:.25rem">Amora Craft House</p>
+        <p>Bunga premium untuk momen spesial Anda · Bandung</p>
+      </div>
+      <div style="text-align:right">
+        <p>📞 083829092027</p>
+        <p>© <span id="year"></span> Amora Craft House. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-panel">
+      <button id="modalClose" class="modal-close">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
